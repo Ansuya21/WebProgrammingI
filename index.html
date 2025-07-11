@@ -1,67 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nature Image Gallery</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Friendship + Display Example</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .styled-paragraph {
+      color: darkblue;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+    }
+    #extraPara {
+      color: darkred;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 20px;
+    }
+    #togglePara, #demo {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #f0f0f0;
+      border-left: 4px solid #555;
+      font-size: 16px;
+      font-family: Verdana;
+    }
+    button {
+      padding: 8px 14px;
+      font-size: 15px;
+      cursor: pointer;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: darkcyan;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="main-div">
-    <div class="middle-div">
-      <div class="container">
+<!-- First Section: Show Paragraphs -->
+<p>This is a paragraph with a <button id="btnShowParas">Click Me</button></p>
 
-        <!-- Forest -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.unsplash.com/photo-1508780709619-79562169bc64?w=1200" target="_blank">
-              <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?w=600" alt="Forest Path">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>A peaceful forest trail surrounded by lush greenery — a perfect escape into nature.</div>
-          </div>
-        </div>
+<div id="paraContainer" class="hidden">
+  <p class="styled-paragraph">Paragraph 1: Siru and I always have fun together, no matter how small the moment is.</p>
+  <p class="styled-paragraph">Paragraph 2: We help each other in class, especially when things get confusing or stressful.</p>
+  <p class="styled-paragraph">Paragraph 3: Sometimes we laugh for hours about the simplest jokes only we understand.</p>
+  <p class="styled-paragraph">Paragraph 4: Even on bad days, talking to Siru makes everything feel a bit better.</p>
+  <p class="styled-paragraph">Paragraph 5: Our friendship is full of love, support, and a lot of memories we’ll never forget.</p>
 
-        <!-- Waterfall -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1200" target="_blank">
-              <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600" alt="Waterfall">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>A magnificent waterfall cascading over rocks into a tranquil pool — pure natural beauty.</div>
-          </div>
-        </div>
+  <button id="btnShowExtra">Show Extra Paragraph</button>
 
-        <!-- Mountain -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200" target="_blank">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600" alt="Mountain Landscape">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>Majestic snow-capped mountains under a blue sky — a breathtaking view of Earth's wonders.</div>
-          </div>
-        </div>
+  <p id="extraPara" class="hidden">
+    Siru and I share a special bond as best friends. We have always been there for each other through thick and thin. Our friendship is built on trust, laughter, and countless memories. Whether we’re studying, laughing, or just being silly, we always lift each other up. Having a friend like Siru makes life meaningful.
+  </p>
 
-        <!-- Sunset Lake -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200" target="_blank">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Sunset Lake">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>A calm lake reflecting the orange glow of a sunset — a serene moment in nature's beauty.</div>
-          </div>
-        </div>
+  <!-- Display: none vs block explanation -->
+  <p id="togglePara" class="hidden">
+    This paragraph is a live example of <strong>display: none</strong> and <strong>display: block</strong>.<br><br>
+    When hidden, it uses <code>display: none</code> — it's completely removed from the screen.<br>
+    When visible, it uses <code>display: block</code> — it appears and takes space.<br>
+    This is useful in menus, buttons, modals, etc.
+  </p>
+</div>
 
-      </div>
-    </div>
-  </div>
+<!-- Second Section: Style Change Example -->
+<hr><br>
+<button onclick="myFunction()">Show Style Change Paragraph</button>
+
+<p id="demo" style="display: none;">
+  JavaScript can change the style of any HTML element.<br><br>
+  <button onclick="changeStyle()">Change Style</button>
+</p>
+
+<!-- JavaScript -->
+<script>
+  const btnShowParas = document.getElementById('btnShowParas');
+  const paraContainer = document.getElementById('paraContainer');
+  const btnShowExtra = document.getElementById('btnShowExtra');
+  const extraPara = document.getElementById('extraPara');
+  const togglePara = document.getElementById('togglePara');
+
+  // Show 5 paragraphs + display explanation
+  btnShowParas.addEventListener('click', () => {
+    paraContainer.classList.remove('hidden');
+
+    const paras = paraContainer.querySelectorAll('.styled-paragraph');
+    paras.forEach(p => {
+      p.style.color = 'green';
+      p.style.fontWeight = '600';
+      p.style.fontSize = '16px';
+    });
+
+    togglePara.classList.remove('hidden');
+  });
+
+  // Show extra friendship paragraph, hide explanation
+  btnShowExtra.addEventListener('click', () => {
+    extraPara.classList.remove('hidden');
+    togglePara.classList.add('hidden');
+  });
+
+  // Style Change Button Example
+  function myFunction() {
+    const demo = document.getElementById("demo");
+    demo.style.display = "block";
+    demo.style.fontSize = "20px";
+    demo.style.color = "white";
+    demo.style.backgroundColor = "red";
+  }
+
+  function changeStyle() {
+    const demo = document.getElementById("demo");
+    demo.style.fontSize = "30px";
+    demo.style.color = "white";
+    demo.style.backgroundColor = "green";
+  }
+</script>
 
 </body>
 </html>
