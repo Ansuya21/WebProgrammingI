@@ -2,127 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Friendship + Display Example</title>
+  <title>Ticket Bazaar - Book Your Tickets Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    .hidden {
-      display: none;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #83a4d4, #b6fbff);
+      color: #222;
+      min-height: 100vh;
     }
-    .styled-paragraph {
-      color: darkblue;
-      font-size: 18px;
-      font-family: Arial, sans-serif;
-      margin-bottom: 10px;
-    }
-    #extraPara {
-      color: darkred;
-      font-weight: bold;
-      font-style: italic;
-      font-size: 20px;
-    }
-    #togglePara, #demo {
-      margin-top: 20px;
-      padding: 12px;
-      background-color: #f0f0f0;
-      border-left: 4px solid #555;
-      font-size: 16px;
-      font-family: Verdana;
-    }
-    button {
-      padding: 8px 14px;
-      font-size: 15px;
-      cursor: pointer;
-      background-color: teal;
+
+    header {
+      background-color: #1565c0;
       color: white;
-      border: none;
-      border-radius: 5px;
-      margin-top: 10px;
+      padding: 25px 20px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 12px rgba(21, 101, 192, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    button:hover {
-      background-color: darkcyan;
+
+    header p {
+      margin-top: 8px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      letter-spacing: 0.8px;
+      color: #dbe9ff;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 25px;
+      font-size: 2rem;
+      color: #0d47a1;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    }
+
+    .ticket-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 0 15px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ticket-item {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+      width: 260px;
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ticket-item:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 15px 25px rgba(21, 101, 192, 0.5);
+    }
+
+    .ticket-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 3px solid #1565c0;
+      flex-shrink: 0;
+    }
+
+    .ticket-item p {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 14px 0 20px;
+      color: #1565c0;
+      flex-grow: 1;
+      padding: 0 10px;
+    }
+
+    .ticket-item a.book-btn {
+      background-color: #1565c0;
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      font-weight: 700;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      transition: background-color 0.3s ease;
+      display: block;
+    }
+
+    .ticket-item a.book-btn:hover {
+      background-color: #0d47a1;
+    }
+
+    footer {
+      background-color: #1565c0;
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      box-shadow: 0 -4px 10px rgba(21, 101, 192, 0.7);
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .ticket-item {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .ticket-gallery {
+        gap: 18px;
+      }
+      .ticket-item {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- First Section: Show Paragraphs -->
-<p>This is a paragraph with a <button id="btnShowParas">Click Me</button></p>
+<header>
+  <h1>Ticket Bazaar</h1>
+  <p>Your One-Stop Destination for All Tickets</p>
+</header>
 
-<div id="paraContainer" class="hidden">
-  <p class="styled-paragraph">Paragraph 1: Siru and I always have fun together, no matter how small the moment is.</p>
-  <p class="styled-paragraph">Paragraph 2: We help each other in class, especially when things get confusing or stressful.</p>
-  <p class="styled-paragraph">Paragraph 3: Sometimes we laugh for hours about the simplest jokes only we understand.</p>
-  <p class="styled-paragraph">Paragraph 4: Even on bad days, talking to Siru makes everything feel a bit better.</p>
-  <p class="styled-paragraph">Paragraph 5: Our friendship is full of love, support, and a lot of memories we’ll never forget.</p>
+<h2>Available Tickets</h2>
 
-  <button id="btnShowExtra">Show Extra Paragraph</button>
+<div class="ticket-gallery">
+  <div class="ticket-item" tabindex="0" role="link" aria-label="Live Concert Ticket Details">
+    <a href="details.html?type=concert" tabindex="-1">
+      <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg" alt="Concert Ticket" />
+    </a>
+    <p>Live Concert</p>
+    <a href="details.html?type=concert" class="book-btn" aria-label="Book Live Concert Ticket">Book Now</a>
+  </div>
 
-  <p id="extraPara" class="hidden">
-    Siru and I share a special bond as best friends. We have always been there for each other through thick and thin. Our friendship is built on trust, laughter, and countless memories. Whether we’re studying, laughing, or just being silly, we always lift each other up. Having a friend like Siru makes life meaningful.
-  </p>
+  <div class="ticket-item" tabindex="0" role="link" aria-label="Movie Night Ticket Details">
+    <a href="details.html?type=movie" tabindex="-1">
+      <img src="https://images.pexels.com/photos/799137/pexels-photo-799137.jpeg" alt="Movie Ticket" />
+    </a>
+    <p>Movie Night</p>
+    <a href="details.html?type=movie" class="book-btn" aria-label="Book Movie Night Ticket">Book Now</a>
+  </div>
 
-  <!-- Display: none vs block explanation -->
-  <p id="togglePara" class="hidden">
-    This paragraph is a live example of <strong>display: none</strong> and <strong>display: block</strong>.<br><br>
-    When hidden, it uses <code>display: none</code> — it's completely removed from the screen.<br>
-    When visible, it uses <code>display: block</code> — it appears and takes space.<br>
-    This is useful in menus, buttons, modals, etc.
-  </p>
+  <div class="ticket-item" tabindex="0" role="link" aria-label="Flight Booking Ticket Details">
+    <a href="details.html?type=flight" tabindex="-1">
+      <img src="https://images.pexels.com/photos/1309644/pexels-photo-1309644.jpeg" alt="Flight Ticket" />
+    </a>
+    <p>Flight Booking</p>
+    <a href="details.html?type=flight" class="book-btn" aria-label="Book Flight Booking Ticket">Book Now</a>
+  </div>
+
+  <div class="ticket-item" tabindex="0" role="link" aria-label="Football Match Ticket Details">
+    <a href="details.html?type=sports" tabindex="-1">
+      <img src="https://images.pexels.com/photos/3991878/pexels-photo-3991878.jpeg" alt="Sports Ticket" />
+    </a>
+    <p>Football Match</p>
+    <a href="details.html?type=sports" class="book-btn" aria-label="Book Football Match Ticket">Book Now</a>
+  </div>
+
+  <div class="ticket-item" tabindex="0" role="link" aria-label="Festival Entry Ticket Details">
+    <a href="details.html?type=event" tabindex="-1">
+      <img src="https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg" alt="Event Ticket" />
+    </a>
+    <p>Festival Entry</p>
+    <a href="details.html?type=event" class="book-btn" aria-label="Book Festival Entry Ticket">Book Now</a>
+  </div>
 </div>
 
-<!-- Second Section: Style Change Example -->
-<hr><br>
-<button onclick="myFunction()">Show Style Change Paragraph</button>
-
-<p id="demo" style="display: none;">
-  JavaScript can change the style of any HTML element.<br><br>
-  <button onclick="changeStyle()">Change Style</button>
-</p>
-
-<!-- JavaScript -->
-<script>
-  const btnShowParas = document.getElementById('btnShowParas');
-  const paraContainer = document.getElementById('paraContainer');
-  const btnShowExtra = document.getElementById('btnShowExtra');
-  const extraPara = document.getElementById('extraPara');
-  const togglePara = document.getElementById('togglePara');
-
-  // Show 5 paragraphs + display explanation
-  btnShowParas.addEventListener('click', () => {
-    paraContainer.classList.remove('hidden');
-
-    const paras = paraContainer.querySelectorAll('.styled-paragraph');
-    paras.forEach(p => {
-      p.style.color = 'green';
-      p.style.fontWeight = '600';
-      p.style.fontSize = '16px';
-    });
-
-    togglePara.classList.remove('hidden');
-  });
-
-  // Show extra friendship paragraph, hide explanation
-  btnShowExtra.addEventListener('click', () => {
-    extraPara.classList.remove('hidden');
-    togglePara.classList.add('hidden');
-  });
-
-  // Style Change Button Example
-  function myFunction() {
-    const demo = document.getElementById("demo");
-    demo.style.display = "block";
-    demo.style.fontSize = "20px";
-    demo.style.color = "white";
-    demo.style.backgroundColor = "red";
-  }
-
-  function changeStyle() {
-    const demo = document.getElementById("demo");
-    demo.style.fontSize = "30px";
-    demo.style.color = "white";
-    demo.style.backgroundColor = "green";
-  }
-</script>
+<footer>
+  &copy; 2025 Ticket Bazaar | All Rights Reserved
+</footer>
 
 </body>
 </html>
