@@ -1,154 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <title>Ticket Bazaar - Book Your Tickets Online</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        body { 
-            margin: 0; 
-            font-family: Arial, sans-serif; 
-            background-color: #e0f0ff; 
-            color: #003366;
-        }
-        header { 
-            background-color: #007bff; 
-            color: white; 
-            padding: 20px; 
-            text-align: center; 
-            font-weight: bold;
-            font-size: 1.8em;
-            letter-spacing: 1px;
-        }
-        h2 { 
-            text-align: center; 
-            margin-top: 30px; 
-            color: #0056b3;
-        }
-        .ticket-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .ticket-item {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            width: 260px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .ticket-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        }
-        .ticket-item img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            cursor: pointer;
-        }
-        .ticket-item p {
-            padding: 12px 15px 5px 15px;
-            margin: 0;
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #003366;
-            cursor: pointer;
-            flex-grow: 1;
-        }
-        .book-btn {
-            background-color: #007bff;
-            color: white;
-            padding: 12px 0;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1em;
-            border-radius: 0 0 10px 10px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s ease;
-        }
-        .book-btn:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-            font-weight: bold;
-        }
-        @media (max-width: 700px) {
-            .ticket-item {
-                width: 90%;
-            }
-        }
-    </style>
+  <title>Nested Divs with Colorful Borders</title>
+  <style>
+    .div1 {
+      background-color: #e0f7fa; /* light cyan */
+      padding: 50px;
+      border-width: 5px;
+      border-style: solid dashed dotted double;
+      border-color: red green blue orange;
+    }
+
+    .div2 {
+      background-color: #dcedc8; /* light green */
+      padding: 50px;
+      border-width: 5px;
+      border-style: dashed dotted double solid;
+      border-color: purple teal gold brown;
+    }
+
+    .div3 {
+      background-color: #fff9c4; /* light yellow */
+      padding: 50px;
+      border-width: 5px;
+      border-style: dotted double solid dashed;
+      border-color: darkblue crimson coral sienna;
+    }
+
+    .div4 {
+      background-color: #f8bbd0; /* light pink */
+      padding: 50px;
+      border-width: 5px;
+      border-style: double solid dashed groove;
+      border-color: navy hotpink lime darkorange;
+    }
+
+    .div5 {
+      background-color: #eeeeee; /* light gray */
+      padding: 50px;
+      border-width: 5px;
+      border-style: ridge inset outset none;
+      border-color: darkgreen maroon cyan black;
+    }
+
+    p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 0;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    Ticket Bazaar
-    <p>Your One-Stop Destination for All Tickets</p>
-</header>
-
-<h2>Available Tickets</h2>
-
-<div class="ticket-gallery">
-    <div class="ticket-item">
-        <a href="details.html?type=concert">
-            <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg" alt="Concert Ticket" />
-            <p>Live Concert</p>
-        </a>
-        <a href="details.html?type=concert" class="book-btn">Book Now</a>
+  <div class="div1">
+    <div class="div2">
+      <div class="div3">
+        <div class="div4">
+          <div class="div5">
+            <p>This is the content inside the colorful nested divs.</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="ticket-item">
-        <a href="details.html?type=movie">
-            <img src="https://images.pexels.com/photos/799137/pexels-photo-799137.jpeg" alt="Movie Ticket" />
-            <p>Movie Night</p>
-        </a>
-        <a href="details.html?type=movie" class="book-btn">Book Now</a>
-    </div>
-
-    <div class="ticket-item">
-        <a href="details.html?type=flight">
-            <img src="https://images.pexels.com/photos/1309644/pexels-photo-1309644.jpeg" alt="Flight Ticket" />
-            <p>Flight Booking</p>
-        </a>
-        <a href="details.html?type=flight" class="book-btn">Book Now</a>
-    </div>
-
-    <div class="ticket-item">
-        <a href="details.html?type=sports">
-            <img src="https://images.pexels.com/photos/3991878/pexels-photo-3991878.jpeg" alt="Football Match Ticket" />
-            <p>Football Match</p>
-        </a>
-        <a href="details.html?type=sports" class="book-btn">Book Now</a>
-    </div>
-
-    <div class="ticket-item">
-        <a href="details.html?type=event">
-            <img src="https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg" alt="Festival Entry Ticket" />
-            <p>Festival Entry</p>
-        </a>
-        <a href="details.html?type=event" class="book-btn">Book Now</a>
-    </div>
-</div>
-
-<footer>
-    &copy; 2025 Ticket Bazaar | All Rights Reserved
-</footer>
+  </div>
 
 </body>
 </html>
