@@ -1,70 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Nested Divs with Colorful Borders</title>
+  <meta charset="UTF-8">
+  <title>Hide Images with JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
-    .div1 {
-      background-color: #e0f7fa; /* light cyan */
-      padding: 50px;
-      border-width: 5px;
-      border-style: solid dashed dotted double;
-      border-color: red green blue orange;
-    }
-
-    .div2 {
-      background-color: #dcedc8; /* light green */
-      padding: 50px;
-      border-width: 5px;
-      border-style: dashed dotted double solid;
-      border-color: purple teal gold brown;
-    }
-
-    .div3 {
-      background-color: #fff9c4; /* light yellow */
-      padding: 50px;
-      border-width: 5px;
-      border-style: dotted double solid dashed;
-      border-color: darkblue crimson coral sienna;
-    }
-
-    .div4 {
-      background-color: #f8bbd0; /* light pink */
-      padding: 50px;
-      border-width: 5px;
-      border-style: double solid dashed groove;
-      border-color: navy hotpink lime darkorange;
-    }
-
-    .div5 {
-      background-color: #eeeeee; /* light gray */
-      padding: 50px;
-      border-width: 5px;
-      border-style: ridge inset outset none;
-      border-color: darkgreen maroon cyan black;
-    }
-
-    p {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f8e1f4, #d0f0fd);
       text-align: center;
-      font-weight: bold;
-      font-size: 18px;
-      margin: 0;
+      padding: 40px;
       color: #333;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px #aaa;
+    }
+
+    .img-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    img {
+      width: 220px;
+      height: 150px;
+      border: 4px solid #444;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #6c5ce7;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 15px;
+      margin: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #a29bfe;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <div class="div1">
-    <div class="div2">
-      <div class="div3">
-        <div class="div4">
-          <div class="div5">
-            <p>This is the content inside the colorful nested divs.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <h2>✨ Image Hiding with JavaScript: Visibility vs Display ✨</h2>
+
+  <div class="img-box">
+    <img id="img1" src="https://media.istockphoto.com/id/1069531070/photo/groups-of-dogs-labrador-puppies-puppy-chocolate-labrador-retriever-in-front-of-white.jpg?s=612x612&w=0&k=20&c=JplDyHWDC0stouz_ddSAE4HHXBHRXd-jlFRbPBgdS38=" alt="Dogs" />
+    <img id="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWoQPrJvAncDxIlbv-IXDjOL9EEgkUU8qfVw&s" alt="Animal" />
+    <img id="img3" src="https://www.sciencing.com/sciencing/five-characteristics-sun-8720219/7ebf43ead3f44fffafc00fd2efc0f7f5.jpg" alt="Sun" />
   </div>
+
+  <div class="buttons">
+    <button onclick="hideImage1()">Hide Image 1 (visibility)</button>
+    <button onclick="hideImage2()">Hide Image 2 (display)</button>
+    <button onclick="hideImage3()">Hide Image 3 (display)</button>
+    <button onclick="hideAll()">Hide All</button>
+    <button onclick="showAll()">Show All</button>
+  </div>
+
+  <footer>
+    Designed with ❤️ by Ansuya – Using JavaScript DOM Manipulation
+  </footer>
+
+  <script>
+    function hideImage1() {
+      document.getElementById("img1").style.visibility = "hidden";
+    }
+
+    function hideImage2() {
+      document.getElementById("img2").style.display = "none";
+    }
+
+    function hideImage3() {
+      document.getElementById("img3").style.display = "none";
+    }
+
+    function hideAll() {
+      document.getElementById("img1").style.visibility = "hidden";
+      document.getElementById("img2").style.display = "none";
+      document.getElementById("img3").style.display = "none";
+    }
+
+    function showAll() {
+      const img1 = document.getElementById("img1");
+      const img2 = document.getElementById("img2");
+      const img3 = document.getElementById("img3");
+
+      img1.style.visibility = "visible";
+      img2.style.display = "inline";
+      img3.style.display = "inline";
+    }
+  </script>
 
 </body>
 </html>
