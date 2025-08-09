@@ -2,19 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rocky - Happy Tails Adoption</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .adopt-btn {
+      background: linear-gradient(135deg, #e63946, #b30000);
+      border: none;
+      border-radius: 30px;
+      padding: 0.7rem 1.8rem;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      transition: background 0.3s ease, transform 0.25s ease;
+    }
+    .adopt-btn:hover {
+      background: linear-gradient(135deg, #b30000, #800000);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body>
-  <header><h1>Meet Rocky</h1></header>
-  <main>
-    <div class="dog-card" style="max-width: 600px; margin: 2em auto;">
-      <img src="https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg" alt="Rocky the German Shepherd" />
-      <h2>Rocky</h2>
-      <p>Rocky is a 3-year-old German Shepherd with high intelligence and loyalty. He is protective and eager to learn new commands. Rocky would be ideal for a family looking for a dependable and active dog with a strong bond.</p>
-      <a href="adoption.html" class="adopt-btn">Adopt Rocky</a>
-      <p><a href="index.html">Back to Home</a></p>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="index.html">Happy Tails</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fs-5">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="dogs.html">Dogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="adoption.html">Adoption</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <div class="card mx-auto shadow-sm" style="max-width: 600px;">
+      <img src="https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg" 
+           class="card-img-top" alt="Rocky the German Shepherd" style="height: 350px; object-fit: cover;">
+      <div class="card-body text-center">
+        <h1 class="text-danger fw-bold mb-3">Rocky</h1>
+        <p class="fs-5">
+          Rocky is a 3-year-old German Shepherd with high intelligence and loyalty.  
+          He is protective and eager to learn new commands. Rocky would be ideal for a family looking for a dependable and active dog with a strong bond.
+        </p>
+        <a href="adoption.html" class="adopt-btn btn">Adopt Rocky</a>
+        <div class="mt-4">
+          <a href="dogs.html" class="text-decoration-none">&larr; Back to Dogs</a>
+        </div>
+      </div>
     </div>
   </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2025 Happy Tails Adoption | Made with ❤ in Nepal</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

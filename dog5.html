@@ -2,19 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Charlie - Happy Tails Adoption</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .adopt-btn {
+      background: linear-gradient(135deg, #e63946, #b30000);
+      border: none;
+      border-radius: 30px;
+      padding: 0.7rem 1.8rem;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      transition: background 0.3s ease, transform 0.25s ease;
+    }
+    .adopt-btn:hover {
+      background: linear-gradient(135deg, #b30000, #800000);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body>
-  <header><h1>Meet Charlie</h1></header>
-  <main>
-    <div class="dog-card" style="max-width: 600px; margin: 2em auto;">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-52t7IBIliAoKPXBTwCl8i9RnW2mrs3c74g&s" alt="Charlie the Husky" />
-      <h2>Charlie</h2>
-      <p>Charlie is a curious and playful 1.5-year-old Siberian Husky. Known for his beautiful blue eyes and vocal nature, Charlie enjoys outdoor adventures and is very loyal. He needs an active owner who can keep up with his energy.</p>
-      <a href="adoption.html" class="adopt-btn">Adopt Charlie</a>
-      <p><a href="index.html">Back to Home</a></p>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="index.html">Happy Tails</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fs-5">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="dogs.html">Dogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="adoption.html">Adoption</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <div class="card mx-auto shadow-sm" style="max-width: 600px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-52t7IBIliAoKPXBTwCl8i9RnW2mrs3c74g&s" 
+           class="card-img-top" alt="Charlie the Husky" style="height: 350px; object-fit: cover;">
+      <div class="card-body text-center">
+        <h1 class="text-danger fw-bold mb-3">Charlie</h1>
+        <p class="fs-5">
+          Charlie is a curious and energetic 1.5-year-old Husky.  
+          He loves outdoor adventures and has a friendly personality. Charlie is perfect for someone who enjoys an active lifestyle.
+        </p>
+        <a href="adoption.html" class="adopt-btn btn">Adopt Charlie</a>
+        <div class="mt-4">
+          <a href="dogs.html" class="text-decoration-none">&larr; Back to Dogs</a>
+        </div>
+      </div>
     </div>
   </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2025 Happy Tails Adoption | Made with ❤ in Nepal</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

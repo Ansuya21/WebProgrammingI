@@ -2,37 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Adoption Form - Happy Tails Adoption</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adoption Process - Happy Tails Adoption</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #e63946, #b30000);
+      border: none;
+      border-radius: 30px;
+      padding: 0.7rem 2rem;
+      font-weight: 700;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      transition: background 0.3s ease, transform 0.25s ease;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #b30000, #800000);
+      transform: scale(1.05);
+    }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #b30000;
+    }
+    h2 {
+      color: #b30000;
+      font-weight: 700;
+    }
+    footer {
+      background-color: #212529;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-  <header><h1>Adoption Form</h1></header>
-  <main>
-    <form action="#" method="post" style="padding: 1em; max-width: 400px; margin: auto;">
-      <label for="name">Full Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">Happy Tails</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav fs-5">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="dogs.html">Dogs</a></li>
+        <li class="nav-item active"><a class="nav-link" href="adoption.html">Adoption</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-      <label for="phone">Phone Number:</label><br>
-      <input type="tel" id="phone" name="phone" required><br><br>
+<!-- Main Content -->
+<main class="container my-5">
+  <h2 class="mb-4 text-center">Adoption Process</h2>
 
-      <label for="dog">Which dog would you like to adopt?</label><br>
-      <select id="dog" name="dog" required>
-        <option value="">--Select Dog--</option>
-        <option value="Max">Max</option>
-        <option value="Luna">Luna</option>
-        <option value="Rocky">Rocky</option>
-        <option value="Bella">Bella</option>
-        <option value="Charlie">Charlie</option>
-      </select><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
 
-      <label for="reason">Why do you want to adopt?</label><br>
-      <textarea id="reason" name="reason" required></textarea><br><br>
+      <p class="lead mb-4">
+        At Happy Tails Adoption, we want to make sure every pet finds a loving and responsible home.  
+        To ensure the best match, please fill out the adoption form below with accurate details.  
+        Our team will review your application and contact you soon.
+      </p>
 
-      <button type="submit" class="adopt-btn">Submit</button>
-    </form>
-  </main>
+      <form>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="fullName" placeholder="Your full name" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email Address <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Phone Number <span class="text-danger">*</span></label>
+          <input type="tel" class="form-control" id="phoneNumber" placeholder="+977 980..." required />
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+          <textarea class="form-control" id="address" rows="2" placeholder="Your full address" required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="dogChoice" class="form-label">Which Dog Would You Like to Adopt? <span class="text-danger">*</span></label>
+          <select class="form-select" id="dogChoice" required>
+            <option value="" selected disabled>Choose a dog</option>
+            <option value="max">Max</option>
+            <option value="luna">Luna</option>
+            <option value="rocky">Rocky</option>
+            <option value="bella">Bella</option>
+            <option value="charlie">Charlie</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Additional Information</label>
+          <textarea class="form-control" id="message" rows="3" placeholder="Tell us about your experience with pets or anything else"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary px-5">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="text-center py-4 mt-5">
+  <p class="mb-0">&copy; 2025 Happy Tails Adoption | Made with ❤ in Nepal</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

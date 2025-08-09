@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dogs - Happy Tails Adoption</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .dog-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+    .adopt-btn {
+      background: linear-gradient(135deg, #e63946, #b30000);
+      border: none;
+      border-radius: 30px;
+      padding: 0.7rem 1.8rem;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      transition: background 0.3s ease, transform 0.25s ease;
+    }
+    .adopt-btn:hover {
+      background: linear-gradient(135deg, #b30000, #800000);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="index.html">Happy Tails</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fs-5">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="dogs.html">Dogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="adoption.html">Adoption</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container my-5">
+    <h1 class="text-center mb-4 text-danger fw-bold">Meet Our Dogs</h1>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Max -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dog-card shadow-sm">
+          <img src="https://i0.wp.com/morrisfocus.com/uploadedmedia/2019/11/Cooper-2.jpg?fit=720%2C480&ssl=1" 
+               class="card-img-top" alt="Max the Labrador" style="height: 180px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-danger fw-semibold">Max</h5>
+            <p class="card-text">Friendly Labrador, 2 years old.</p>
+            <a href="dog1.html" class="adopt-btn btn d-inline-block">Adopt Max</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luna -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dog-card shadow-sm">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.RZaT0vj-hzsh7PF7tWH7vQHaEP?pid=ImgDetMain" 
+               class="card-img-top" alt="Luna the Beagle" style="height: 180px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-danger fw-semibold">Luna</h5>
+            <p class="card-text">Playful Beagle, 1.5 years old.</p>
+            <a href="dog2.html" class="adopt-btn btn d-inline-block">Adopt Luna</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rocky -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dog-card shadow-sm">
+          <img src="https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg" 
+               class="card-img-top" alt="Rocky the German Shepherd" style="height: 180px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-danger fw-semibold">Rocky</h5>
+            <p class="card-text">Energetic German Shepherd, 3 years old.</p>
+            <a href="dog3.html" class="adopt-btn btn d-inline-block">Adopt Rocky</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bella -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dog-card shadow-sm">
+          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRp-KOty1cZwZ9dtkEVNr79G4p7x8am3q4eTmngCou0twaqdsO9inHlC3bDydqYkB4tP-jaPvFk5ajQydudeiMblw" 
+               class="card-img-top" alt="Bella the Golden Retriever" style="height: 180px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-danger fw-semibold">Bella</h5>
+            <p class="card-text">Gentle Golden Retriever, 2.5 years old.</p>
+            <a href="dog4.html" class="adopt-btn btn d-inline-block">Adopt Bella</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charlie -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dog-card shadow-sm">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-52t7IBIliAoKPXBTwCl8i9RnW2mrs3c74g&s" 
+               class="card-img-top" alt="Charlie the Husky" style="height: 180px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-danger fw-semibold">Charlie</h5>
+            <p class="card-text">Curious Husky, 1.5 years old.</p>
+            <a href="dog5.html" class="adopt-btn btn d-inline-block">Adopt Charlie</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2025 Happy Tails Adoption | Made with ❤ in Nepal</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
