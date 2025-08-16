@@ -72,7 +72,12 @@
         Our team will review your application and contact you soon.
       </p>
 
-      <form>
+      <!-- Success Message -->
+      <div id="successMessage" class="alert alert-success d-none" role="alert">
+        🎉 Your application has been successfully submitted! We will contact you soon.
+      </div>
+
+      <form id="adoptionForm">
         <div class="mb-3">
           <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
           <input type="text" class="form-control" id="fullName" placeholder="Your full name" required />
@@ -123,5 +128,20 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Form Script -->
+<script>
+document.getElementById("adoptionForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // Stop form from refreshing
+
+  if (this.checkValidity()) {
+    document.getElementById("successMessage").classList.remove("d-none");
+    this.reset(); // Clear form after submit
+  } else {
+    this.reportValidity(); // Show browser validation errors
+  }
+});
+</script>
+
 </body>
 </html>
